@@ -1,0 +1,16 @@
+html {
+    text-align: center;
+}
+
+input {
+    margin: 10px auto 10px auto;
+}
+
+.borders{
+    
+    background-color: rgb(245, 204, 152);
+    border: solid 1px black;
+    width: 200px;
+    text-align: center;
+    margin: auto;
+}
