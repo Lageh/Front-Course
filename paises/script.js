@@ -40,8 +40,8 @@ function alerta(){
                 aux.push(idiomas[key])
             }
         }
-        lingua.innerHTML = aux.join(", ");
-        capital.innerHTML = data[0].capital;
+        lingua.innerHTML = "&emsp;" + aux.join(", ");
+        capital.innerHTML = "&emsp;" + data[0].capital;
         bandeira.src = data[0].flags.png;
         for (const key in data[0].borders) {
             if(Object.hasOwnProperty.call(data[0].borders,key)){
@@ -50,18 +50,22 @@ function alerta(){
             }
         }
     }
+    console.log(fronteira_aux.length);
         if(fronteira_aux.length > 1 ){
-            fronteiras.innerHTML = fronteira_aux.join(", ");
-        }else{
-            fronteiras.innerHTML = fronteira_aux;
+            fronteiras.innerHTML = "&emsp;" + fronteira_aux.join(", ");
+        }else if (fronteira_aux.length == 1){
+            fronteiras.innerHTML = "&emsp;" + fronteira_aux;
+        } else if (fronteira_aux.length == 0){
+            fronteiras.innerHTML = "&emsp; Ilhas não têm fronteiras";
         }
-        area.innerHTML = data[0].area + " km²";
+
+        area.innerHTML ="&emsp;" +  data[0].area + " km²";
         
 
         for (const key in data[0].currencies) {
             moeda_aux.push(key);
         }
-        moeda.innerHTML = moeda_aux.join(", ");
+        moeda.innerHTML = "&emsp;" + moeda_aux.join(", ");
         
     
         document.body.style.backgroundImage = "url(" + data[0].flags.png +")";
