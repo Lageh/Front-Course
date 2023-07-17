@@ -16,5 +16,4 @@ function buscacep(){
         cidade.value = data.localidade
         estado.value = data.uf
     })
-
 }
