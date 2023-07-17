@@ -5,19 +5,196 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Países</title>
     <script src="script.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #121212;
+            color: #fff;
+            overflow: auto; 
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            color: #00ffff;
+            font-size: 48px;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #1f1f1f;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #ccc;
+            font-size: 20px;
+        }
+
+        select {
+            font-size: 16px;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+            margin-bottom: 15px;
+            border: none;
+            background-color: #282828;
+            color: #fff;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        hr {
+            margin: 20px 0;
+            border: none;
+            border-top: 1px solid #444;
+        }
+
+        span {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+            opacity: 0;
+            animation: fade-in 1s ease-in-out forwards;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        img {
+            max-width: 200px;
+            margin-top: 10px;
+            display: block;
+            border-radius: 10px;
+            opacity: 0;
+            animation: fade-in 1s ease-in-out forwards;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fade-in 1s ease-in-out forwards;
+        }
+
+        .form-group:last-child {
+            margin-bottom: 0;
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        body {
+            background-image: linear-gradient(to right, #00b4db, #0083b0);
+            animation: gradient-animation 20s infinite alternate;
+        }
+
+        @keyframes gradient-animation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-top: 50px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        form {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 40px;
+        }
+
+        label {
+            color: #aaa;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        select {
+            font-size: 16px;
+            padding: 12px;
+            margin-bottom: 25px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            border: 1px solid #777;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        hr {
+            border-top-color: #555;
+        }
+
+        span {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 15px;
+            opacity: 0;
+        }
+
+        img {
+            margin-top: 15px;
+            opacity: 0;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+    </style>
 </head>
 <body>
-    <span>Selecione um país</span>
-    <select name="example" id="comboPais" onchange="alerta()">
-    </select>
-    <hr>
-    <span>Lingua: </span> <span id="lingua"></span>
-    <br>
-    <span>Capital: </span> <span id="capital"></span>
-    <br>
-    <span>Bandeira: </span> <img id="bandeira" alt="" srcset="">
-    <br>
-    <iframe src="https://www.google.com/search?q=Canada&tbm=isch" target="_blank" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+    <h1>Países</h1>
 
+    <form>
+        <div class="form-group">
+            <label for="comboPais">Selecione um país:</label>
+            <select name="example" id="comboPais" onchange="alerta()">
+            </select>
+        </div>
+        <hr>
+
+        <div class="form-group">
+            <span>Língua:</span>
+            <span id="lingua"></span>
+        </div>
+        <div class="form-group">
+            <span>Capital:</span>
+            <span id="capital"></span>
+        </div>
+        <div class="form-group">
+            <span>Bandeira:</span>
+            <img id="bandeira" alt="" srcset="">
+        </div>
+        <div class="form-group">
+            <span>Fronteiras:</span>
+            <span id="fronteiras"></span>
+        </div>
+        <div class="form-group">
+            <span>Área:</span>
+            <span id="area"></span>
+        </div>
+        <div class="form-group">
+            <span>Moeda:</span>
+            <span id="moeda"></span>
+        </div>
+    </form>
 </body>
 </html>
